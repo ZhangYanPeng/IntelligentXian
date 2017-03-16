@@ -1,4 +1,4 @@
-package com.Intelligent.Xian;
+package com.Intelligent.Xian.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
