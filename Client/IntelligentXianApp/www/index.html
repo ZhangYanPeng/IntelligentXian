@@ -1,177 +1,155 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <!--
+            Customize this policy to fit your own app's needs. For more guidance, see:
+                https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+            Some notes:
+                * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+                * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+                * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                    * Enable inline JS: add 'unsafe-inline' to default-src
+            -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src * 'self' 'unsafe-inline'; media-src *">
 
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
+        <!-- Required meta tags-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
 
-    <!-- Your app title -->
-    <title>My App</title>
+        <!-- Your app title -->
+        <title>My App</title>
 
-    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
-        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
-     -->
+        <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+            http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+         -->
 
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+        <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+        <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
-    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
 
-<body>
-    <!-- Status bar overlay for full screen mode (PhoneGap) -->
-    <div class="statusbar-overlay"></div>
+    <body>
+        <!-- Status bar overlay for full screen mode (PhoneGap) -->
+        <div class="statusbar-overlay"></div>
 
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal" style="background:white;">
-        <div class="content-block">
-            <div class="list-block">
-                <li class="item-content">
-                    <div class="facebook-avatar"><img src="./images/0.jpg" width="60" height="60"></div>
-                    <div class="facebook-name">John Doe</div>
-                </li>
-                <li class="item-content">
-                  <div class="item-media"><i class="fa fa-user-o" aria-hidden="true"></i></div>
-                  <div class="item-inner">
-                    <div class="item-title">个人信息</div>
-                    <div class="item-after"></div>
-                  </div>
-                </li>
-                 <li class="item-content">
-                  <div class="item-media"><i class="fa fa-envelope-o"></i></div>
-                  <div class="item-inner">
-                    <div class="item-title">服务定制</div>
-                    <div class="item-after"></div>
-                  </div>
-                </li>
-                 <li class="item-content">
-                  <div class="item-media"><i class="fa fa-address-book-o" aria-hidden="true"></i></div>
-                  <div class="item-inner">
-                    <div class="item-title">身份认证</div>
-                    <div class="item-after"></div>
-                  </div>
-                </li>
-                 <li class="item-content">
-                  <div class="item-media"><i class="fa fa-lock"></i></div>
-                  <div class="item-inner">
-                    <div class="item-title">修改密码</div>
-                    <div class="item-after"></div>
-                  </div>
-                </li>
-                <br>
-               <li class="item-content">
-                  <div class="item-media"><i class="fa fa-sign-out"></i></div>
-                  <div class="item-inner">
-                    <div class="item-title">切换账号</div>
-                    <div class="item-after"></div>
-                  </div>
-                </li>
-                <li class="item-content">
-                  <div class="item-media"><i class="fa fa-power-off"></i></div>
-                  <div class="item-inner">
-                    <div class="item-title">注销</div>
-                    <div class="item-after"></div>
-                  </div>
-                </li>
-
-            </div>
-               
-               
-
-           
-        </div>
-    </div>
-
-
-    <!-- Views -->
-    <div class="views">
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="left"><a href="#" data-popover=".popover-links" class="link open-popover">西安</a></div>
-
-                    <div class="center sliding">Awesome App</div>
-                    <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
+        <!-- Panels overlay-->
+        <div class="panel-overlay"></div>
+        <!-- Left panel with reveal effect-->
+        <div class="panel panel-left panel-reveal" style="background:white;">
+            <div class="content-block">
+                <div class="list-block">
+                    <li class="item-content">
+                        <div class="facebook-avatar"><img src="./images/0.jpg" width="60" height="60"></div>
+                        <div class="facebook-name">John Doe</div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-media"><i class="fa fa-user-o" aria-hidden="true"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">个人信息</div>
+                        <div class="item-after"></div>
+                      </div>
+                    </li>
+                     <li class="item-content">
+                      <div class="item-media"><i class="fa fa-envelope-o"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">服务定制</div>
+                        <div class="item-after"></div>
+                      </div>
+                    </li>
+                     <li class="item-content">
+                      <div class="item-media"><i class="fa fa-address-book-o" aria-hidden="true"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">身份认证</div>
+                        <div class="item-after"></div>
+                      </div>
+                    </li>
+                     <li class="item-content">
+                      <div class="item-media"><i class="fa fa-lock"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">修改密码</div>
+                        <div class="item-after"></div>
+                      </div>
+                    </li>
+                    <br>
+                   <li class="item-content">
+                      <div class="item-media"><i class="fa fa-sign-out"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">切换账号</div>
+                        <div class="item-after"></div>
+                      </div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-media"><i class="fa fa-power-off"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">注销</div>
+                        <div class="item-after"></div>
+                      </div>
+                    </li>
                 </div>
             </div>
-            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
-                <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
-                    <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <div class="content-block">
-                            <div class="content-block-title">No gutter between columns</div>
-                            <div class="content-block">
-                                <div class="row no-gutter">
-                                    <div class="col-33">33%</div>
-                                    <div class="col-33">33%</div>
-                                    <div class="col-33">33%</div>
-                                </div>
-                            </div>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
+        </div>
+
+
+        <!-- Views -->
+        <div class="views">
+            <!-- Your main view, should have "view-main" class -->
+            <div class="view view-main">
+                <!-- Top Navbar-->
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                        <div class="left"><a href="city_select.html">西安&nbsp;<i class="fa fa-sort"></i></a></div>
+
+                        <div class="right">
+                            <!--
+                              Right link contains only icon - additional "icon-only" class
+                              Additional "open-panel" class tells app to open panel when we click on this link
+                            -->
+                            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
+                <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+                <div class="pages navbar-through toolbar-through">
+                    <!-- Page, "data-page" contains page name -->
+                    <div data-page="index" class="page">
+                        <!-- Scrollable page content -->
+                        <div class="page-content">
+                            <div class="content-block">
+                                <div class="content-block-title">No gutter between columns</div>
+                                <div class="content-block">
+                                    <div class="row no-gutter">
+                                        <div class="col-33"><a href="http://www.baidu.com" class="external"><i class="fa fa-cloud-upload size-50"></i><br>1111111</a></div>
+                                        <div class="col-33"><i class="fa fa-cloud-upload size-50"></i><br>1121221</div>
+                                        <div class="col-33"><i class="fa fa-cloud-upload size-50"></i><br>1212121</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom Toolbar-->
+                <div class="toolbar">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="#" class="link">Link 1</a>
+                        <a href="#" class="link">Link 2</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+        <script type="text/javascript" src="js/my-app.js"></script>
 
-    <div class="popover popover-links">
-        <div class="popover-angle"></div>
-        <div class="popover-inner">
-          <div class="list-block">
-            <ul>
-              <li><a href="#" class="list-button item-link">西安</a></li>
-              <li><a href="#" class="list-button item-link">Link 2</a></li>
-              <li><a href="#" class="list-button item-link">Link 3</a></li>
-              <li><a href="#" class="list-button item-link">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
-    </div>
+    </body>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
-</body>
-
-</html>
+    </html>

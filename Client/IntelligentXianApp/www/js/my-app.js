@@ -34,9 +34,18 @@ $$(document).on('deviceready', function() {
 // Now we need to run the code that will be executed only for About page.
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-myApp.onPageInit('about', function (page) {
+myApp.onPageInit('city_select', function (page) {
     // Do something here for "about" page
-
+    var pickerCity = myApp.picker({
+        input: '#picker-picker-city',
+        cols: [
+        {
+            textAlign: 'center',
+            values: ['西安', '渭南', '宝鸡', '汉中', '延安', '榆林', '商洛']
+        }
+        ]
+    });
+    pickerCity.open();
 })
 
 // Option 2. Using one 'pageInit' event handler for all pages:
@@ -44,14 +53,17 @@ $$(document).on('pageInit', function (e) {
     // Get page data from event data
     var page = e.detail.page;
 
-    if (page.name === 'about') {
+    if (page.name === 'web_view') {
         // Following code will be executed for page with data-page attribute equal to "about"
-        myApp.alert('Here comes About page');
     }
+
+
 })
 
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
-    myApp.alert('Here comes About page');
+    
 })
+
+
