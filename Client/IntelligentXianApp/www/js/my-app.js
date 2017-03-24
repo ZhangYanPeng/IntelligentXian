@@ -36,7 +36,24 @@ $$(document).on('deviceready', function() {
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('city_select', function (page) {
     // Do something here for "about" page
+<<<<<<< HEAD
     
+=======
+    console.log('start');
+    $$.ajax({
+        url:'https://m.baidu.com/',
+        crossDomain:true,
+        method:'GET',
+        success:function(data){
+            console.log(data);
+             $$('#baidu').html(data);
+        },
+        error:function(xhr,status){
+            console.log(xhr);
+            console.log(status);
+        }
+    });
+>>>>>>> refs/remotes/origin/Ming
 })
 
 // Option 2. Using one 'pageInit' event handler for all pages:
@@ -54,7 +71,20 @@ $$(document).on('pageInit', function (e) {
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
+<<<<<<< HEAD
     
 })
 
 
+=======
+    myApp.alert('Here comes About page');
+})
+
+
+myApp.onPageInit('baidu-service', function (page) {
+    var url = 'https://m.baidu.com/';
+    var iframe = '<iframe width="100%" onload="changeFrameHeight()" id="iframe" scrolling="no" src="'+url+'" frameborder="0"></iframe>';
+    $$('.baidu').html("Loading...");
+    $$('.baidu').html(iframe);
+})
+>>>>>>> refs/remotes/origin/Ming
