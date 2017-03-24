@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+     <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src * 'self' 'unsafe-inline'; media-src *">
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -50,47 +41,59 @@
                     <div class="facebook-name">John Doe</div>
                 </li>
                 <li class="item-content">
-                  <div class="item-media"><i class="fa fa-user-o" aria-hidden="true"></i></div>
-                  <div class="item-inner">
-                    <div class="item-title">个人信息</div>
-                    <div class="item-after"></div>
-                  </div>
+                    <a href="personal.html" class="item-link item-content">
+                      <div class="item-media"><i class="fa fa-user-o" aria-hidden="true"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">个人信息</div>
+                        <div class="item-after"></div>
+                      </div>
+                      </a>
                 </li>
                  <li class="item-content">
+                  <a href="#" class="item-link item-content">
                   <div class="item-media"><i class="fa fa-envelope-o"></i></div>
                   <div class="item-inner">
                     <div class="item-title">服务定制</div>
                     <div class="item-after"></div>
                   </div>
+                  </a>
                 </li>
                  <li class="item-content">
+                   <a href="#" class="item-link item-content">
                   <div class="item-media"><i class="fa fa-address-book-o" aria-hidden="true"></i></div>
                   <div class="item-inner">
                     <div class="item-title">身份认证</div>
                     <div class="item-after"></div>
                   </div>
+                  </a>
                 </li>
                  <li class="item-content">
+                   <a href="#" class="item-link item-content">
                   <div class="item-media"><i class="fa fa-lock"></i></div>
                   <div class="item-inner">
                     <div class="item-title">修改密码</div>
                     <div class="item-after"></div>
                   </div>
+                  </a>
                 </li>
                 <br>
                <li class="item-content">
+                 <a href="#" class="item-link item-content">
                   <div class="item-media"><i class="fa fa-sign-out"></i></div>
                   <div class="item-inner">
                     <div class="item-title">切换账号</div>
                     <div class="item-after"></div>
                   </div>
+                  </a>
                 </li>
                 <li class="item-content">
+                  <a href="#" class="item-link item-content">
                   <div class="item-media"><i class="fa fa-power-off"></i></div>
                   <div class="item-inner">
-                    <div class="item-title">注销</div>
+                    <div class="item-title">注&nbsp;&nbsp;&nbsp;&nbsp;销</div>
                     <div class="item-after"></div>
                   </div>
+                  </a>
                 </li>
 
             </div>
@@ -126,9 +129,9 @@
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         <div class="content-block">
-                            
                             <!-- Link to another page -->
-                            <a href="about.html">About app</a>
+                            <a href="./service/baidu.html">百度服务</a>
+
                         </div>
                     </div>
                 </div>
@@ -147,6 +150,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
+     <script type="text/javascript" src="js/iframe-fill.js"></script>
 </body>
 
 </html>

@@ -17,3 +17,19 @@
     width: 1em;
     height: 1em;
 }
+
+.personal-meta{
+	width: 100%;
+}
+.personal-meta-right{
+	float: right;
+}
+.personal-meta-list {
+    padding-left: 0px;
+}
+.content-block {
+    /* margin: 35px 0; */
+    /* padding: 0 15px; */
+    color: #6d6d72;
+    box-sizing: border-box;
+}
