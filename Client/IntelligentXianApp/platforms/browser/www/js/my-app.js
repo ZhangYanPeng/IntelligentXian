@@ -36,16 +36,7 @@ $$(document).on('deviceready', function() {
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('city_select', function (page) {
     // Do something here for "about" page
-    var pickerCity = myApp.picker({
-        input: '#picker-picker-city',
-        cols: [
-        {
-            textAlign: 'center',
-            values: ['西安', '渭南', '宝鸡', '汉中', '延安', '榆林', '商洛']
-        }
-        ]
-    });
-    pickerCity.open();
+    
 })
 
 // Option 2. Using one 'pageInit' event handler for all pages:

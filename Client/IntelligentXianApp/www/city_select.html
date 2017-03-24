@@ -16,23 +16,32 @@
     </div>
 </div>
 <div class="pages">
-    <div data-page="about" class="page">
+    <div data-page="city_select" class="page">
         <div class="page-content">
             <div class="content-block">
-                <div class="content-block-title">请选择您所在的城市</div>
                 <div class="list-block">
                     <ul>
+                        <!-- Smart select item -->
                         <li>
-                            <div class="item-content">
-                                <div class="item-inner">
-                                    <div class="item-input">
-                                        <input type="text" placeholder="西安" readonly id="picker-city">
+                            <a href="#" class="item-link smart-select">
+                                <!-- select -->
+                                <select name="fruits">
+                                    <option value="apple" selected>西安</option>
+                                    <option value="pineapple">宝鸡</option>
+                                    <option value="pineapple">汉中</option>
+                                </select>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <!-- Select label -->
+                                        <div class="item-title">城市</div>
+                                        <!-- Selected value, not required -->
+                                        <div class="item-after">西安</div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                     </ul>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
