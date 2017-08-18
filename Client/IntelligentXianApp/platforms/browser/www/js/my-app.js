@@ -1,19 +1,19 @@
 // Initialize app
 var myApp = new Framework7({
-        // Default title for modals
-        modalTitle: 'My App',
-     
-        // If it is webapp, we can enable hash navigation:
-        pushState: true,
-     
-        // Hide and show indicator during ajax requests
-        onAjaxStart: function (xhr) {
-            myApp.showIndicator();
-        },
-        onAjaxComplete: function (xhr) {
-            myApp.hideIndicator();
-        }
-  }); 
+    // Default title for modals
+    modalTitle: '西安信息惠民APP',
+ 
+    // If it is webapp, we can enable hash navigation:
+    pushState: true,
+ 
+    // Hide and show indicator during ajax requests
+    onAjaxStart: function (xhr) {
+        myApp.showIndicator();
+    },
+    onAjaxComplete: function (xhr) {
+        myApp.hideIndicator();
+    }
+}); 
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -36,20 +36,6 @@ $$(document).on('deviceready', function() {
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('city_select', function (page) {
     // Do something here for "about" page
-    console.log('start');
-    $$.ajax({
-        url:'https://m.baidu.com/',
-        crossDomain:true,
-        method:'GET',
-        success:function(data){
-            console.log(data);
-             $$('#baidu').html(data);
-        },
-        error:function(xhr,status){
-            console.log(xhr);
-            console.log(status);
-        }
-    });
 })
 
 // Option 2. Using one 'pageInit' event handler for all pages:
@@ -57,23 +43,34 @@ $$(document).on('pageInit', function (e) {
     // Get page data from event data
     var page = e.detail.page;
 
-    if (page.name === 'web_view') {
+    if (page.name === 'web-view') {
         // Following code will be executed for page with data-page attribute equal to "about"
+        var str=location.href; //取得整个地址栏
+        var num=str.indexOf("=") 
+        str=str.substr(num+1);
+        console.log(str);
+        document.getElementById('web_url').src=str;
+        document.getElementById('web_url').height=document.documentElement.clientHeight;
     }
 
-
 })
 
-// Option 2. Using live 'pageInit' event handlers for each page
-$$(document).on('pageInit', '.page[data-page="about"]', function (e) {
-    // Following code will be executed for page with data-page attribute equal to "about"
-    myApp.alert('Here comes About page');
+myApp.onPageInit('index', function (page) {
+    // Do something here for "about" page
+    var mySwiper = myApp.swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationHide: true,
+      paginationClickable: false,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+    });
 })
+var mySwiper = myApp.swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationHide: true,
+      paginationClickable: false,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+    });
 
 
-myApp.onPageInit('baidu-service', function (page) {
-    var url = 'https://m.baidu.com/';
-    var iframe = '<iframe width="100%" onload="changeFrameHeight()" id="iframe" scrolling="no" src="'+url+'" frameborder="0"></iframe>';
-    $$('.baidu').html("Loading...");
-    $$('.baidu').html(iframe);
-})
